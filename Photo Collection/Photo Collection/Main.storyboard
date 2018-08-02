@@ -125,12 +125,10 @@
                         </connections>
                     </collectionView>
                     <navigationItem key="navigationItem" title="Photos" id="p5e-AA-V5W">
-                        <barButtonItem key="leftBarButtonItem" id="HyW-tL-IVz">
-                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="OCQ-IA-Zrc">
-                                <rect key="frame" x="16" y="7" width="95" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Select Theme"/>
-                            </button>
+                        <barButtonItem key="leftBarButtonItem" title="Select Theme" id="sX1-HH-p5B">
+                            <connections>
+                                <segue destination="CNO-Ml-qES" kind="presentation" identifier="ShowSettings" id="3Ng-8T-4yH"/>
+                            </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="0Mt-iB-IFV">
                             <connections>
@@ -138,9 +136,6 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
-                    <connections>
-                        <segue destination="CNO-Ml-qES" kind="presentation" identifier="ShowSettings" id="okj-iB-C77"/>
-                    </connections>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5gZ-vE-ekj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -161,18 +156,18 @@
                                         <rect key="frame" x="0.0" y="0.0" width="343" height="444.5"/>
                                     </imageView>
                                     <button opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="751" verticalCompressionResistancePriority="751" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xqd-CG-BiN">
-                                        <rect key="frame" x="0.0" y="452.5" width="343" height="38"/>
+                                        <rect key="frame" x="0.0" y="452.5" width="343" height="28.5"/>
                                         <state key="normal" title="Add Photo"/>
                                         <connections>
                                             <action selector="addPhoto:" destination="m3A-Ub-sKQ" eventType="touchUpInside" id="dSA-GH-Ztb"/>
                                         </connections>
                                     </button>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="752" verticalCompressionResistancePriority="752" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fvP-Ed-f7B">
-                                        <rect key="frame" x="0.0" y="498.5" width="343" height="20.5"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    <textField opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="752" verticalCompressionResistancePriority="752" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Photo Title:" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="SnK-2F-jaO">
+                                        <rect key="frame" x="0.0" y="489" width="343" height="30"/>
                                         <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
                                 </subviews>
                             </stackView>
                         </subviews>
@@ -195,7 +190,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="photoImageView" destination="1M7-6R-BXE" id="mY9-ET-eQL"/>
-                        <outlet property="photoLabel" destination="fvP-Ed-f7B" id="oGm-wd-qKM"/>
+                        <outlet property="photoTextField" destination="SnK-2F-jaO" id="LV9-SG-vZp"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="smz-H9-dcC" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -222,6 +217,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="MLI-IR-asp"/>
+        <segue reference="ka7-h7-Ty7"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -15,6 +15,7 @@ class PhotoDetailViewController: UIViewController, UIImagePickerControllerDelega
         super.viewWillAppear(animated)
         
         updateViews()
+        setTheme()
     }
     
     
@@ -37,7 +38,7 @@ class PhotoDetailViewController: UIViewController, UIImagePickerControllerDelega
                 return
         }
         photoImageView.image = image
-        photoLabel.text = thisPhoto.title
+        photoTextField.text = thisPhoto.title
         navigationItem.title = thisPhoto.title
     }
     
@@ -104,7 +105,7 @@ class PhotoDetailViewController: UIViewController, UIImagePickerControllerDelega
     }
     
     @IBAction func savePhoto(_ sender: Any) {
-        guard let title = photoLabel.text,
+        guard let title = photoTextField.text,
             let image = photoImageView.image,
             let imageData = UIImagePNGRepresentation(image) else {
                 showSaveAlert()
@@ -122,7 +123,7 @@ class PhotoDetailViewController: UIViewController, UIImagePickerControllerDelega
     // MARK: - Outlets
     
     @IBOutlet weak var photoImageView: UIImageView!
-    @IBOutlet weak var photoLabel: UILabel!
+    @IBOutlet weak var photoTextField: UITextField!
     
     
     // MARK: - Properties
