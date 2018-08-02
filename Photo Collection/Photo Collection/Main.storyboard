@@ -146,7 +146,7 @@
             </objects>
             <point key="canvasLocation" x="956" y="230.73463268365819"/>
         </scene>
-        <!--Title-->
+        <!--Add new photo-->
         <scene sceneID="WKh-k4-vZ6">
             <objects>
                 <viewController id="m3A-Ub-sKQ" customClass="PhotoDetailViewController" customModule="Photo_Collection" customModuleProvider="target" sceneMemberID="viewController">
@@ -186,7 +186,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="agf-5p-KGn"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Title" id="fOk-Vs-y88">
+                    <navigationItem key="navigationItem" title="Add new photo" id="fOk-Vs-y88">
                         <barButtonItem key="rightBarButtonItem" systemItem="save" id="rly-85-q6M">
                             <connections>
                                 <action selector="savePhoto:" destination="m3A-Ub-sKQ" id="kYP-zC-MsD"/>
