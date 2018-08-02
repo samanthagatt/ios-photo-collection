@@ -12,6 +12,61 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+        <!--Theme Selection View Controller-->
+        <scene sceneID="nF1-4x-yJ7">
+            <objects>
+                <viewController id="CNO-Ml-qES" customClass="ThemeSelectionViewController" customModule="Photo_Collection" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="byS-bC-kLi">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="f2T-IY-Q0t">
+                                <rect key="frame" x="19" y="84" width="337.5" height="63.5"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select a theme you would like to use" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sds-ZH-24Z">
+                                        <rect key="frame" x="0.0" y="0.0" width="337.5" height="25.5"/>
+                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="21"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="SwS-2j-4qI">
+                                        <rect key="frame" x="0.0" y="33.5" width="337.5" height="30"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cmh-f2-L42">
+                                                <rect key="frame" x="0.0" y="0.0" width="165" height="30"/>
+                                                <state key="normal" title="Green"/>
+                                                <connections>
+                                                    <action selector="selectGreenTheme:" destination="CNO-Ml-qES" eventType="touchUpInside" id="Fua-4d-V0J"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iBx-wR-DhH">
+                                                <rect key="frame" x="173" y="0.0" width="164.5" height="30"/>
+                                                <state key="normal" title="Dark"/>
+                                                <connections>
+                                                    <action selector="selectDarkTheme:" destination="CNO-Ml-qES" eventType="touchUpInside" id="zjc-al-Bai"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="SwS-2j-4qI" firstAttribute="leading" secondItem="f2T-IY-Q0t" secondAttribute="leading" id="WHT-nJ-6PO"/>
+                                    <constraint firstAttribute="trailing" secondItem="SwS-2j-4qI" secondAttribute="trailing" id="aaX-Mg-9CL"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="f2T-IY-Q0t" firstAttribute="top" secondItem="rKR-OV-1VO" secondAttribute="top" constant="64" id="Ac3-OU-EgB"/>
+                            <constraint firstItem="f2T-IY-Q0t" firstAttribute="centerX" secondItem="byS-bC-kLi" secondAttribute="centerX" id="lv8-Ef-2ZQ"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="rKR-OV-1VO"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4nj-Ps-0vg" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="956" y="-510"/>
+        </scene>
         <!--Photos-->
         <scene sceneID="oh6-6Y-Q7d">
             <objects>
@@ -83,6 +138,9 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <segue destination="CNO-Ml-qES" kind="presentation" identifier="ShowSettings" id="okj-iB-C77"/>
+                    </connections>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5gZ-vE-ekj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
