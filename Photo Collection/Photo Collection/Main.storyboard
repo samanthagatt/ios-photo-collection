@@ -6,6 +6,8 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="Stack View standard spacing" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -25,7 +27,7 @@
                             <inset key="sectionInset" minX="16" minY="16" maxX="16" maxY="16"/>
                         </collectionViewFlowLayout>
                         <cells>
-                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="FVl-UO-lUd" customClass="PhotosCollectionViewCell" customModule="Photo_Collection" customModuleProvider="target">
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="PhotoCell" id="FVl-UO-lUd" customClass="PhotosCollectionViewCell" customModule="Photo_Collection" customModuleProvider="target">
                                 <rect key="frame" x="16" y="16" width="100" height="100"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
@@ -58,6 +60,7 @@
                                 <connections>
                                     <outlet property="photoImageView" destination="bga-Dp-i5b" id="4eZ-FW-4PA"/>
                                     <outlet property="photoLabel" destination="OPb-Nn-1Nf" id="CIi-qW-xIA"/>
+                                    <segue destination="m3A-Ub-sKQ" kind="show" identifier="ShowDetails" id="MLI-IR-asp"/>
                                 </connections>
                             </collectionViewCell>
                         </cells>
@@ -67,19 +70,79 @@
                         </connections>
                     </collectionView>
                     <navigationItem key="navigationItem" title="Photos" id="p5e-AA-V5W">
-                        <barButtonItem key="leftBarButtonItem" style="plain" id="HyW-tL-IVz">
+                        <barButtonItem key="leftBarButtonItem" id="HyW-tL-IVz">
                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="OCQ-IA-Zrc">
                                 <rect key="frame" x="16" y="7" width="95" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Select Theme"/>
                             </button>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" style="plain" systemItem="add" id="0Mt-iB-IFV"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="0Mt-iB-IFV">
+                            <connections>
+                                <segue destination="m3A-Ub-sKQ" kind="show" identifier="ShowAddPhoto" id="ka7-h7-Ty7"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5gZ-vE-ekj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="956" y="230.73463268365819"/>
+        </scene>
+        <!--Title-->
+        <scene sceneID="WKh-k4-vZ6">
+            <objects>
+                <viewController id="m3A-Ub-sKQ" customClass="PhotoDetailViewController" customModule="Photo_Collection" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="2hO-NN-24n">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="8Jl-UQ-oal">
+                                <rect key="frame" x="16" y="132" width="343" height="519"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="1M7-6R-BXE">
+                                        <rect key="frame" x="0.0" y="0.0" width="343" height="444.5"/>
+                                    </imageView>
+                                    <button opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="751" verticalCompressionResistancePriority="751" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xqd-CG-BiN">
+                                        <rect key="frame" x="0.0" y="452.5" width="343" height="38"/>
+                                        <state key="normal" title="Add Photo"/>
+                                        <connections>
+                                            <action selector="addPhoto:" destination="m3A-Ub-sKQ" eventType="touchUpInside" id="dSA-GH-Ztb"/>
+                                        </connections>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="752" verticalCompressionResistancePriority="752" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fvP-Ed-f7B">
+                                        <rect key="frame" x="0.0" y="498.5" width="343" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="8Jl-UQ-oal" firstAttribute="leading" secondItem="agf-5p-KGn" secondAttribute="leading" constant="16" id="1La-zv-PjH"/>
+                            <constraint firstItem="1M7-6R-BXE" firstAttribute="height" secondItem="2hO-NN-24n" secondAttribute="height" multiplier="2/3" id="EAN-IA-Kr9"/>
+                            <constraint firstItem="8Jl-UQ-oal" firstAttribute="top" secondItem="agf-5p-KGn" secondAttribute="top" constant="16" id="Eqf-56-Fd9"/>
+                            <constraint firstItem="agf-5p-KGn" firstAttribute="trailing" secondItem="8Jl-UQ-oal" secondAttribute="trailing" constant="16" id="SLA-6o-XwQ"/>
+                            <constraint firstItem="agf-5p-KGn" firstAttribute="bottom" secondItem="8Jl-UQ-oal" secondAttribute="bottom" constant="16" id="Wl2-bP-MGa"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="agf-5p-KGn"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Title" id="fOk-Vs-y88">
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="rly-85-q6M">
+                            <connections>
+                                <action selector="savePhoto:" destination="m3A-Ub-sKQ" id="kYP-zC-MsD"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="photoImageView" destination="1M7-6R-BXE" id="mY9-ET-eQL"/>
+                        <outlet property="photoLabel" destination="fvP-Ed-f7B" id="oGm-wd-qKM"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="smz-H9-dcC" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1701.5999999999999" y="230.73463268365819"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="fnT-8d-ive">
@@ -100,4 +163,7 @@
             <point key="canvasLocation" x="207" y="231"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="MLI-IR-asp"/>
+    </inferredMetricsTieBreakers>
 </document>
