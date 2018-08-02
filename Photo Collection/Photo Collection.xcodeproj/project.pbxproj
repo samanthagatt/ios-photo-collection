@@ -12,6 +12,7 @@
 		D62AF769211383F00024DAAB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D62AF768211383F00024DAAB /* Assets.xcassets */; };
 		D62AF76C211383F00024DAAB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D62AF76A211383F00024DAAB /* LaunchScreen.storyboard */; };
 		D62AF7742113844B0024DAAB /* Photo.swift in Sources */ = {isa = PBXBuildFile; fileRef = D62AF7732113844B0024DAAB /* Photo.swift */; };
+		D62AF776211385120024DAAB /* PhotoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D62AF775211385120024DAAB /* PhotoController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,7 @@
 		D62AF76B211383F00024DAAB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D62AF76D211383F00024DAAB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D62AF7732113844B0024DAAB /* Photo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Photo.swift; sourceTree = "<group>"; };
+		D62AF775211385120024DAAB /* PhotoController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,6 +57,7 @@
 			isa = PBXGroup;
 			children = (
 				D62AF7732113844B0024DAAB /* Photo.swift */,
+				D62AF775211385120024DAAB /* PhotoController.swift */,
 				D62AF765211383ED0024DAAB /* Main.storyboard */,
 				D62AF768211383F00024DAAB /* Assets.xcassets */,
 				D62AF761211383ED0024DAAB /* AppDelegate.swift */,
@@ -135,6 +138,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D62AF776211385120024DAAB /* PhotoController.swift in Sources */,
 				D62AF7742113844B0024DAAB /* Photo.swift in Sources */,
 				D62AF762211383ED0024DAAB /* AppDelegate.swift in Sources */,
 			);
