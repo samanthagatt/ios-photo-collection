@@ -11,19 +11,19 @@ import Foundation
 class PhotoController {
     
     
+    // MARK: - Initializer
+    
+    init() {
+        loadFromPersistentStore()
+    }
+    
     
     // MARK: - Properties
     
     var photos: [Photo] = []
     
     
-    
-    
     // MARK: - Persistence
-    
-    init() {
-        loadFromPersistentStore()
-    }
     
     var photosURL: URL? {
         let fm = FileManager.default
@@ -60,7 +60,6 @@ class PhotoController {
             NSLog("Error loading photos data: \(error)")
         }
     }
-    
     
     
     // MARK: - Methods

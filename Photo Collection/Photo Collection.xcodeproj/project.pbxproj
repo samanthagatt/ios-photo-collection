@@ -13,6 +13,7 @@
 		D62AF76C211383F00024DAAB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D62AF76A211383F00024DAAB /* LaunchScreen.storyboard */; };
 		D62AF7742113844B0024DAAB /* Photo.swift in Sources */ = {isa = PBXBuildFile; fileRef = D62AF7732113844B0024DAAB /* Photo.swift */; };
 		D62AF776211385120024DAAB /* PhotoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D62AF775211385120024DAAB /* PhotoController.swift */; };
+		D62AF77821138CC50024DAAB /* ThemeHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = D62AF77721138CC50024DAAB /* ThemeHelper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		D62AF76D211383F00024DAAB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D62AF7732113844B0024DAAB /* Photo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Photo.swift; sourceTree = "<group>"; };
 		D62AF775211385120024DAAB /* PhotoController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoController.swift; sourceTree = "<group>"; };
+		D62AF77721138CC50024DAAB /* ThemeHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeHelper.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +60,7 @@
 			children = (
 				D62AF7732113844B0024DAAB /* Photo.swift */,
 				D62AF775211385120024DAAB /* PhotoController.swift */,
+				D62AF77721138CC50024DAAB /* ThemeHelper.swift */,
 				D62AF765211383ED0024DAAB /* Main.storyboard */,
 				D62AF768211383F00024DAAB /* Assets.xcassets */,
 				D62AF761211383ED0024DAAB /* AppDelegate.swift */,
@@ -141,6 +144,7 @@
 				D62AF776211385120024DAAB /* PhotoController.swift in Sources */,
 				D62AF7742113844B0024DAAB /* Photo.swift in Sources */,
 				D62AF762211383ED0024DAAB /* AppDelegate.swift in Sources */,
+				D62AF77821138CC50024DAAB /* ThemeHelper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
